@@ -29,8 +29,7 @@ class UserRepositoryImpl(private val database: MongoDatabase) : UserRepository {
         try {
             val query = Filters.eq("_id", id)
             val updates = Updates.combine(
-                Updates.set(User::firstname.name, user.firstname),
-                Updates.set(User::lastname.name, user.lastname),
+                Updates.set(User::name.name, user.name),
             )
             val options = UpdateOptions().upsert(true)
             collection.updateOne(query, updates, options)
@@ -66,6 +65,16 @@ class UserRepositoryImpl(private val database: MongoDatabase) : UserRepository {
         try {
             collection
                 .find(Filters.eq("_id", id))
+                .firstOrNull()
+        } catch (e: Exception) {
+            System.err.println("Unable to get user by id due to an error: $e")
+            null
+        }
+
+    override suspend fun getByEmail(email: String): User? =
+        try {
+            collection
+                .find(Filters.eq("email", email))
                 .firstOrNull()
         } catch (e: Exception) {
             System.err.println("Unable to get user by id due to an error: $e")

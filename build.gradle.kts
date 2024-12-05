@@ -34,4 +34,14 @@ dependencies {
     implementation("io.ktor:ktor-client-cio-jvm:3.0.1")
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
+
+    implementation("io.ktor:ktor-server-call-logging-jvm:3.0.1")
+    implementation("io.ktor:ktor-server-auth-jvm:3.0.1")
+    implementation("io.ktor:ktor-server-auth-jwt-jvm:3.0.1")
+    implementation("ch.qos.logback:logback-classic:1.5.12")
+
+    implementation("commons-codec:commons-codec:1.17.1")
+
+    implementation("com.sksamuel.hoplite:hoplite-core:2.9.0")
+    implementation("com.sksamuel.hoplite:hoplite-hocon:2.9.0")
 }

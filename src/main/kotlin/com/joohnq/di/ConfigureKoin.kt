@@ -1,4 +1,4 @@
-package com.joohnq.application.di
+package com.joohnq.di
 
 import io.ktor.server.application.*
 import org.koin.ktor.plugin.Koin
@@ -7,7 +7,12 @@ import org.koin.logger.slf4jLogger
 fun Application.configureKoin() {
     install(Koin) {
         slf4jLogger()
-        modules(initDatabaseModule(this@configureKoin), repositoryModule)
+        modules(
+            appModule,
+            initDatabaseModule(this@configureKoin),
+            repositoryModule,
+            securityModule
+        )
     }
 }
 

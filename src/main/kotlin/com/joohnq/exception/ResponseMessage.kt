@@ -1,4 +1,4 @@
-package com.joohnq.application.exception
+package com.joohnq.exception
 
 import io.ktor.http.*
 

@@ -1,6 +1,6 @@
-package com.joohnq.application.mappers
+package com.joohnq.mappers
 
-import com.joohnq.application.exception.ResponseMessage
+import com.joohnq.exception.ResponseMessage
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.request.*

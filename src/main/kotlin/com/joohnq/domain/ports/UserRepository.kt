@@ -11,4 +11,5 @@ interface UserRepository {
     suspend fun delete(id: ObjectId): Boolean
     suspend fun getAll(): List<User>
     suspend fun getById(id: ObjectId): User?
+    suspend fun getByEmail(email: String): User?
 }

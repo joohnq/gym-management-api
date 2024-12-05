@@ -1,4 +1,4 @@
-package com.joohnq.application.di
+package com.joohnq.di
 
 import com.joohnq.domain.ports.UserRepository
 import com.joohnq.infrastructure.repository.UserRepositoryImpl
